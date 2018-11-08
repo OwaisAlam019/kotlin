@@ -110,9 +110,8 @@ class MethodInliner(
                 transformedNode.signature, transformedNode.exceptions?.toTypedArray()
         )
 
-        val visitor = RemapVisitor(
-            resultNode, remapper, nodeRemapper
-        )
+        val visitor = RemapVisitor(resultNode, remapper, nodeRemapper)
+
         try {
             transformedNode.accept(
                 if (isTransformingAnonymousObject) {
